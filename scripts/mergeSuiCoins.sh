@@ -2,7 +2,6 @@
 #
 # Merge SUI coins to a single coin.
 
-
 # Create a list of all Sui coins.
 # Output array starts at index 1 ([1:]) because index 0 is gas coin.
 suiCoins=$(sui client gas --json | jq -r '.[1:] | .[].gasCoinId')
