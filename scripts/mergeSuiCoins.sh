@@ -16,7 +16,7 @@ if [ ${#suiCoinArray[@]} -eq 1 ]; then
 fi
 
 # Format Sui coins for merging
-formattedSuiCoins=$(echo "${suiCoinArray[@]}" | awk '{ printf "@%s, ", $0 }' | tr -d '\n' | sed 's/, $/\n/')
+formattedSuiCoins=$(echo $suiCoins | sed 's/^/@/; s/ /, @/g')
 
 # Merge coins into a single Sui coin.
 sui client ptb \
